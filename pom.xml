@@ -14,13 +14,14 @@
 	<properties>
 		<!-- Build Settings -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.6</java.version>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
 		<!-- Plugin Versions - Listed in alphabetical order -->
 		<maven-compiler-plugin.version>3.0</maven-compiler-plugin.version>
 		<maven-shade-plugin.version>2.2</maven-shade-plugin.version>
 		<!-- Dependencies - Keep In Alphabetical Order -->
-		<commons-cli.version>1.3-SNAPSHOT</commons-cli.version>
-		<java-commons.version>0.0.6</java-commons.version>
+		<commons-cli.version>1.3</commons-cli.version>
+		<java-commons.version>1.2.1</java-commons.version>
 	</properties>
 	<dependencies>
 		<!-- Keep in alphabetical order by groupId and artifactId -->
@@ -38,15 +39,6 @@
 	<build>
 		<plugins>
 			<!-- Used to compile source code -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven-compiler-plugin.version}</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
@@ -69,48 +61,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<!-- Repositories to load dependencies and plugins from -->
-	<repositories>
-		<repository>
-			<id>netradius-public</id>
-			<name>NetRadius Nexus Managed Public Repository</name>
-			<url>http://mirrors.netradius.com/nexus/content/groups/public</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>daily</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>netradius-private-thirdparty</id>
-			<name>NetRadius Third-party Private Repository</name>
-			<url>https://mirrors.netradius.com/nexus/content/repositories/private-thirdparty</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>daily</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>netradius-public</id>
-			<name>NetRadius Nexus Managed Public Repository</name>
-			<url>http://mirrors.netradius.com/nexus/content/groups/public</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>daily</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
 </project>

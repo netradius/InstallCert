@@ -107,8 +107,13 @@ public class InstallCert {
 			x.printStackTrace();
 			System.exit(1);
 		} finally {
-			try {
-				in.close();
+			if (in != null) {
+				try {
+					in.close();
+				} catch (IOException x) {
+					// do nothing
+				}
+			}
 		}
 		return null;
 	}
