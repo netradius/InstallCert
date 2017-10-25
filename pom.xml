@@ -14,7 +14,7 @@
 	<properties>
 		<!-- Build Settings -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.7</java.version>
+		<java.version>1.6</java.version>
 		<!-- Plugin Versions - Listed in alphabetical order -->
 		<maven-compiler-plugin.version>3.0</maven-compiler-plugin.version>
 		<maven-shade-plugin.version>2.2</maven-shade-plugin.version>
