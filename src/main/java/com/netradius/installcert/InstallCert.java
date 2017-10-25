@@ -96,7 +96,9 @@ public class InstallCert {
 	}
 
 	private static KeyStore openKeyStore(File keyStoreFile, String passphrase) {
-		try (InputStream in = new FileInputStream(keyStoreFile)) {
+		InputStream in = null;
+		try {
+			in = new FileInputStream(keyStoreFile);
 			KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
 			ks.load(in, passphrase.toCharArray());
 			return ks;
@@ -104,6 +106,9 @@ public class InstallCert {
 			System.err.println("unable to open key store: " + x.getMessage());
 			x.printStackTrace();
 			System.exit(1);
+		} finally {
+			try {
+				in.close();
 		}
 		return null;
 	}
