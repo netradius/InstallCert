@@ -1,4 +1,4 @@
-InstallCert
+[InstallCert](https://www.netradius.com/)
 ==============================================
 
 The goal of this project is to create a Jar file InstallCert.jar which downloads certificate chain from a remote host
@@ -17,20 +17,20 @@ git clone https://github.com/netradius/install-cert
 In order to build this project, you need to have the Java SE 8 (JDK) installed - You should be able to run "java 
 -version" from the command line.
 
-Inorder to build the jar, you need to open a command prompt, navigate to the same directory as the top level pom.xml 
+In order to build the jar, you need to open a command prompt, navigate to the same directory as the top level pom.xml 
 file in the project and then run the following command
 
 ./mvnw clean package
 
 ## How do I run InstallCert?
-Inorder to run the jar, you need to open a command prompt, navigate to the same directory as the top level pom.xml 
+In order to run the jar, you need to open a command prompt, navigate to the same directory as the top level pom.xml 
 file in the project and then run the following command
 
 java -jar ./target/install-cert-X.X.X-SNAPSHOT.jar -h HOST_NAME_OR_IP –k PATH_TO_JAVA_TRUSTSTORE –s 
 PASSWORD_FOR_TRUSTSTORE -p PORT_TO_CONNECT
 
 
-where following are the options you need to add while running above command
+where following are the options you may need to add while running above command
 
 -b,--backup                    backup keystore before save
 -h,--host <host>               host to connect to
@@ -48,7 +48,7 @@ java -jar ./target/install-cert-1.0.0-SNAPSHOT.jar -h google.com -k $(/usr/libex
 /jre/lib/security/cacerts -s changeit -p 443
 
 Sample Output:
-Abhijeets-MacBook-Pro:install-cert abhi$ java -jar ./target/install-cert-1.0.0-SNAPSHOT.jar -h google.com -k 
+install-cert abhi$ java -jar ./target/install-cert-1.0.0-SNAPSHOT.jar -h google.com -k 
 /Test/cacerts -s changeit -p 443
 opening connect to google.com:443
 starting SSL handshake
@@ -90,5 +90,3 @@ save modified keystore (Y/n) [Y]
 Y
 
 keystore written successfully, exiting
-
-[NetRadius, LLC](https://www.netradius.com/)
